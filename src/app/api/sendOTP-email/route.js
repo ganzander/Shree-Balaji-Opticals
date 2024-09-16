@@ -28,7 +28,7 @@ export async function POST(req) {
       subject: "Sending EMAIL for OTP Validation",
       text: `OTP: ${OTP}`,
     };
-    transporter.sendMail(mailOptions, (err, info) => {
+    await transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         console.log(err);
       }
