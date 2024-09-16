@@ -106,7 +106,7 @@ export default function Page() {
           </button>
           <div className="w-full text-center">
             <small className="text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-              Don't have an account:{" "}
+              Don&apos;t have an account:{" "}
               <Link href="/register" className="text-blue-500">
                 Register
               </Link>
