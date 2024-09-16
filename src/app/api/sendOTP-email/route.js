@@ -12,29 +12,31 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(req) {
-  const { email } = await req.json();
-  const OTP = Math.floor(100000 + Math.random() * 900000);
-  const UserFound = await User.findOne({ email: email });
+  try {
+    const { email } = await req.json();
 
-  if (UserFound) {
-    const updateData = await User.updateOne(
-      { email: email },
-      { $set: { otp: OTP } },
-      { new: true }
-    );
+    const OTP = Math.floor(100000 + Math.random() * 900000);
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return Response.json({ Success: false, msg: "Email not registered" });
+    }
+
+    await User.updateOne({ email }, { $set: { otp: OTP } });
+
     const mailOptions = {
       from: process.env.EMAIL,
       to: email,
-      subject: "Sending EMAIL for OTP Validation",
-      text: `OTP: ${OTP}`,
+      subject: "OTP Validation",
+      text: `Your OTP is: ${OTP}`,
     };
-    await transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.log(err);
-      }
-    });
+
+    await transporter.sendMail(mailOptions);
+
     return Response.json({ Success: true, msg: "OTP sent" });
-  } else {
-    return Response.json({ Success: false, msg: "Email not registered" });
+  } catch (error) {
+    console.error("Error sending OTP:", error);
+    return Response.json({ Success: false, msg: "An error occurred" });
   }
 }
