@@ -10,7 +10,7 @@ export default function ServiceSection() {
 
   return (
     <div className="w-full min-h-screen bg-[#FEFAF6] py-20 dark:bg-black">
-      <h2 className="w-full uppercase text-center pl-4 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="w-full uppercase text-center pl-4 text-2xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         SERVICES
       </h2>
       <Carousel items={cards} />

@@ -15,7 +15,7 @@ import Image from "next/image";
 export default function FeatureSection() {
   return (
     <div className="min-h-screen w-full bg-[#F6F5F2] py-20 dark:bg-black">
-      <h2 className="w-full uppercase text-center pl-4 pb-20 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="w-full uppercase text-center pl-4 pb-20 text-2xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Features
       </h2>
       <BentoGrid className="max-w-4xl mx-auto ">

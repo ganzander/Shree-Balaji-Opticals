@@ -10,7 +10,7 @@ import {
 export default function FAQs() {
   return (
     <div className="relative overflow-hidden overflow-x-hidden dark:bg-grid-white/[0.05] antialiased min-h-screen w-full flex flex-col justify-center items-center bg-[#F6F5F2] text-black dark:bg-black  dark:text-white">
-      <p className="text-center text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-black dark:text-white py-8">
+      <p className="text-center text-2xl md:text-5xl font-bold relative z-20 bg-clip-text text-black dark:text-white py-8">
         FAQs
       </p>
       <Accordion
