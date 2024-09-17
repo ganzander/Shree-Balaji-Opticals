@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
-  direction = "left",
-  speed = "fast",
+  direction,
+  speed,
   pauseOnHover = true,
   className,
 }) => {
@@ -79,7 +79,7 @@ export const InfiniteMovingCards = ({
           >
             <blockquote>
               <div className="w-full flex items-center justify-center">
-                <div className="relative w-[20vh] h-[20vh] overflow-hidden mb-4">
+                <div className="relative w-[25vw] h-[25vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] overflow-hidden mb-4">
                   <Image
                     src={item.imageSrc}
                     alt={item.name}
