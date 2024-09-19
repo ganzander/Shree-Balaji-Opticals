@@ -56,15 +56,6 @@ function Navbar({ className }) {
         <Link href="/frames">
           <MenuItem setActive={setActive} active={active} item="Frames" />
         </Link>
-        <Link href="/about">
-          <MenuItem setActive={setActive} active={active} item="Stores" />
-        </Link>
-        <Link href="/about">
-          <MenuItem setActive={setActive} active={active} item="About" />
-        </Link>
-        <Link href="/contact">
-          <MenuItem setActive={setActive} active={active} item="Contact" />
-        </Link>
         {decoded.fname !== undefined ? (
           <MenuItem setActive={setActive} active={active} item="Dashboard">
             <div className="flex flex-col space-y-4 text-sm">

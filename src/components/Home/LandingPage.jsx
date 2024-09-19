@@ -23,7 +23,7 @@ export default function LandingPage() {
           Shree Balaji Opticals
         </div>
         <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          Shri Balaji Opticals is here to help you see the world more clearly.
+          Shree Balaji Opticals is here to help you see the world more clearly.
         </div>
         <button
           onClick={() => {

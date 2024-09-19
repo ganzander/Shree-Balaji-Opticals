@@ -41,7 +41,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/store"
+                  href="/stores"
                   className="dark:text-gray-400 text-sm md:text-lg hover:text-white transition-colors"
                 >
                   Store
