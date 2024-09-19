@@ -57,6 +57,7 @@ export async function POST(req) {
       email,
       password: encryptedPassword,
       phone: mobileNo,
+      isAdmin: false,
     });
     await User.create(userSave);
     return Response.json({

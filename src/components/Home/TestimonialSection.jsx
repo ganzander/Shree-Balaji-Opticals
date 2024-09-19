@@ -9,7 +9,7 @@ const testimonials = [
     name: "Rajesh Gupta",
     title: "Customer",
     imageSrc:
-      "https://images.unsplash.com/photo-1477814670986-8d8dccc5640d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG1vZGVsJTIwZXlld2VhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1607081692245-419edffb5462?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGluZGlhbiUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     quote:
@@ -17,7 +17,7 @@ const testimonials = [
     name: "Sneha Verma",
     title: "Customer",
     imageSrc:
-      "https://images.unsplash.com/photo-1477814670986-8d8dccc5640d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG1vZGVsJTIwZXlld2VhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1600544395530-69b40d0483ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGluZGlhbiUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     quote:
@@ -25,7 +25,7 @@ const testimonials = [
     name: "Amit Shah",
     title: "Customer",
     imageSrc:
-      "https://images.unsplash.com/photo-1477814670986-8d8dccc5640d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG1vZGVsJTIwZXlld2VhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1577760960310-c49bbb09161e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGluZGlhbiUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     quote:
@@ -33,7 +33,7 @@ const testimonials = [
     name: "Neha Kapoor",
     title: "Customer",
     imageSrc:
-      "https://images.unsplash.com/photo-1477814670986-8d8dccc5640d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG1vZGVsJTIwZXlld2VhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1591980896142-4e36328411ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGluZGlhbiUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     quote:
@@ -41,7 +41,7 @@ const testimonials = [
     name: "Vikram Singh",
     title: "Customer",
     imageSrc:
-      "https://images.unsplash.com/photo-1477814670986-8d8dccc5640d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fG1vZGVsJTIwZXlld2VhcnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/flagged/photo-1571366992968-15b65708ee76?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGluZGlhbiUyMG1vZGVsc3xlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
 

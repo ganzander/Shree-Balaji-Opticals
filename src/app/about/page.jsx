@@ -11,7 +11,7 @@ export default function Page() {
         />
         <div className="flex flex-col items-center">
           <h2 className="w-full text-center pb-5 text-lg sm:text-2xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-            Shree Balaji Opticals
+            About
           </h2>
           <h2 className="w-full text-justify pl-2 pr-2 md:pl-10 md:pr-10 pb-5 text-sm sm:text-lg md:text-xl font-normal text-neutral-800 dark:text-neutral-200 font-sans">
             Welcome to Shree Balaji Opticals, your trusted destination for
@@ -37,11 +37,25 @@ export default function Page() {
             We aim to build lasting relationships with our customers, offering
             trust and reliability that you can depend on. Thank you for choosing
             Shree Balaji Opticals, where your vision and style matter most.
-            Vision Statement: To be the leading provider of quality eyewear and
-            eye care services, delivering clarity and comfort to every
-            individual. Mission Statement: To offer comprehensive eye care
-            solutions that prioritize customer satisfaction, combining
-            expertise, technology, and a personalized approach.
+          </h2>
+
+          {/* Vision Statement */}
+          <h2 className="w-full text-justify pl-2 pb-5 pr-2 md:pl-10 md:pr-10 text-sm sm:text-lg md:text-xl font-normal text-neutral-800 dark:text-neutral-200 font-sans">
+            <span className="w-full text-center text-lg tracking-tight sm:text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+              Vision Statement :{" "}
+            </span>
+            To be the leading provider of quality eyewear and eye care services,
+            delivering clarity and comfort to every individual.
+          </h2>
+
+          {/* Mission Statement */}
+          <h2 className="w-full text-justify pl-2 pr-2 pb-5 md:pl-10 md:pr-10 text-sm sm:text-lg md:text-xl font-normal text-neutral-800 dark:text-neutral-200 font-sans">
+            <span className="w-full text-center text-lg tracking-tight sm:text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+              Mission Statement :{" "}
+            </span>
+            To offer comprehensive eye care solutions that prioritize customer
+            satisfaction, combining expertise, technology, and a personalized
+            approach.
           </h2>
         </div>
       </div>

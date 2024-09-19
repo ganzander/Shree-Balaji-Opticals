@@ -75,7 +75,7 @@ export default function Page() {
               onChange={handleChange}
               placeholder="Email"
               type="email"
-              autocomplete="off"
+              autoComplete="off"
               required
             />
           </LabelInputContainer>
@@ -88,7 +88,7 @@ export default function Page() {
               onChange={handleChange}
               placeholder="Password"
               type="password"
-              autocomplete="off"
+              autoComplete="off"
               required
             />
           </LabelInputContainer>

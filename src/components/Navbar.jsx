@@ -12,6 +12,7 @@ import {
   IconSettings,
   IconGardenCart,
   IconTruckDelivery,
+  IconEditCircle,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -57,42 +58,54 @@ function Navbar({ className }) {
           <MenuItem setActive={setActive} active={active} item="Frames" />
         </Link>
         {decoded.fname !== undefined ? (
-          <MenuItem setActive={setActive} active={active} item="Dashboard">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item={`Hi, ${decoded.fname}`}
+          >
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/profile">
-                <div className="flex justify-around items-center">
-                  <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                <div className="flex justify-between items-center">
                   Profile
+                  <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 </div>
               </HoveredLink>
               <HoveredLink href="/cart">
-                <div className="flex justify-around items-center">
-                  <IconGardenCart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                <div className="flex justify-between items-center">
                   Cart
+                  <IconGardenCart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 </div>
               </HoveredLink>
               <HoveredLink href="/orders">
-                <div className="flex justify-around items-center">
-                  <IconTruckDelivery className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                <div className="flex justify-between items-center">
                   Order
+                  <IconTruckDelivery className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 </div>
               </HoveredLink>
               <HoveredLink href="/settings">
-                <div className="flex justify-around items-center">
-                  <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                <div className="flex justify-between items-center">
                   Settings
+                  <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 </div>
               </HoveredLink>
+              {decoded.isAdmin && (
+                <HoveredLink href="/updateMenu">
+                  <div className="flex justify-between items-center">
+                    Update
+                    <IconEditCircle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  </div>
+                </HoveredLink>
+              )}
               <HoveredLink href="">
                 <div
-                  className="flex justify-around items-center"
+                  className="flex justify-between items-center"
                   onClick={() => {
                     localStorage.removeItem("AuthToken");
                     location.reload();
                   }}
                 >
-                  <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                   Logout
+                  <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 </div>
               </HoveredLink>
             </div>

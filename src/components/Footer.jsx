@@ -10,8 +10,8 @@ export default function Footer() {
               Shree Balaji Opticals
             </h3>
           </div>
-          <div className="text-center">
-            <h4 className="text-lg md:text-xl font-semibold mb-4 text-center">
+          <div className="text-justify md:text-center">
+            <h4 className="text-lg md:text-xl font-semibold mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="text-center">
+          <div className="text-justify md:text-center">
             <h4 className="text-lg md:text-xl font-semibold mb-4">
               Contact Us
             </h4>
@@ -76,7 +76,7 @@ export default function Footer() {
             <p className="dark:text-gray-400 text-sm md:text-lg mb-2">
               Phone: 7042592797
             </p>
-            <p className="dark:text-gray-400 text-sm md:text-lg mb-4">
+            <p className="dark:text-gray-400 text-sm md:text-lg mb-4 overflow-hidden">
               Email: shreebalajiopticals2023@gmail.com
             </p>
           </div>

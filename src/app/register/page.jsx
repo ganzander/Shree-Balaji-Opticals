@@ -73,7 +73,7 @@ export default function Page() {
                 value={registerCred.fname}
                 onChange={handleChange}
                 placeholder="First Name"
-                autocomplete="off"
+                autoComplete="off"
                 required
                 type="text"
               />
@@ -84,7 +84,7 @@ export default function Page() {
                 id="lastname"
                 placeholder="Last Name"
                 name="lname"
-                autocomplete="off"
+                autoComplete="off"
                 required
                 value={registerCred.lname}
                 onChange={handleChange}
@@ -97,7 +97,7 @@ export default function Page() {
             <Input
               id="email"
               name="email"
-              autocomplete="off"
+              autoComplete="off"
               required
               value={registerCred.email}
               onChange={handleChange}
@@ -109,7 +109,7 @@ export default function Page() {
             <Label htmlFor="password">Password</Label>
             <Input
               name="password"
-              autocomplete="off"
+              autoComplete="off"
               required
               value={registerCred.password}
               onChange={handleChange}
@@ -122,7 +122,7 @@ export default function Page() {
             <Label htmlFor="mobile">Mobile Number</Label>
             <Input
               name="mobile"
-              autocomplete="off"
+              autoComplete="off"
               required
               value={registerCred.mobile}
               onChange={handleChange}

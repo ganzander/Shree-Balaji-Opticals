@@ -14,6 +14,7 @@ function generateAuthToken(newuser) {
         lname: newuser.lname,
         fname: newuser.fname,
         email: newuser.email,
+        isAdmin: newuser.isAdmin,
       },
       process.env.HASH_KEY
     );
