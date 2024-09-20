@@ -9,16 +9,19 @@ import {
 
 export default function FAQs() {
   return (
-    <div className="relative overflow-hidden overflow-x-hidden dark:bg-grid-white/[0.05] antialiased min-h-screen w-full flex flex-col justify-center items-center bg-[#F6F5F2] text-black dark:bg-black  dark:text-white">
+    <div className="relative overflow-hidden overflow-x-hidden dark:bg-grid-white/[0.05] bg-[#eee] text-black dark:bg-black dark:text-white antialiased min-h-screen w-full flex flex-col justify-center items-center">
       <p className="text-center text-2xl md:text-5xl font-bold relative z-20 bg-clip-text text-black dark:text-white py-8">
         FAQs
       </p>
       <Accordion
         type="single"
         collapsible
-        className="w-full text-center max-w-4xl mx-auto"
+        className="w-full text-center max-w-4xl mx-auto dark:bg-transparent"
       >
-        <AccordionItem value="item-1">
+        <AccordionItem
+          value="item-1"
+          className="bg-white dark:bg-transparent p-2 shadow-lg"
+        >
           <AccordionTrigger className="text-sm md:text-xl text-left">
             What services does Shree Balaji Opticals offer?
           </AccordionTrigger>
@@ -28,7 +31,10 @@ export default function FAQs() {
             consultations.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2">
+        <AccordionItem
+          value="item-2"
+          className="bg-white dark:bg-transparent p-2 shadow-lg"
+        >
           <AccordionTrigger className="text-sm md:text-xl text-left">
             How often should I get my eyes tested?
           </AccordionTrigger>
@@ -37,7 +43,10 @@ export default function FAQs() {
             sooner if you experience any vision changes or discomfort.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-3">
+        <AccordionItem
+          value="item-3"
+          className="bg-white dark:bg-transparent p-2 shadow-lg"
+        >
           <AccordionTrigger className="text-sm md:text-xl text-left">
             Do you offer custom lenses and frames?
           </AccordionTrigger>
@@ -47,7 +56,10 @@ export default function FAQs() {
             range of frames to suit all styles and budgets.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-4">
+        <AccordionItem
+          value="item-4"
+          className="bg-white dark:bg-transparent p-2 shadow-lg"
+        >
           <AccordionTrigger className="text-sm md:text-xl text-left">
             Do you provide home delivery of eyeglasses or contact lenses?
           </AccordionTrigger>
@@ -56,7 +68,10 @@ export default function FAQs() {
             lenses. Please contact us for details and delivery options.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-5">
+        <AccordionItem
+          value="item-5"
+          className="bg-white dark:bg-transparent p-2 shadow-lg"
+        >
           <AccordionTrigger className="text-sm md:text-xl text-left">
             Can I get my old frames fitted with new lenses?
           </AccordionTrigger>

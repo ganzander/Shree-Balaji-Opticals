@@ -52,7 +52,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="min-h-screen pt-24 w-full flex flex-col items-center justify-center bg-[#F6F5F2] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+      <div className="min-h-screen pt-24 w-full flex flex-col items-center justify-center bg-[#eee] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
@@ -62,7 +62,7 @@ export default function Page() {
         </h2>
 
         <div className="flex justify-evenly items-center md:items-start gap-10 ms-10 me-10 w-full md:flex-row flex-col pb-20">
-          <div className="max-w-md w-full rounded-lg md:rounded-2xl p-7 md:p-8 shadow-input bg-[#c0d1da] dark:bg-black">
+          <div className="max-w-md w-full rounded-lg md:rounded-2xl p-7 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="uppercase font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
               Drop a message
             </h2>
@@ -108,7 +108,7 @@ export default function Page() {
                 />
               </LabelInputContainer>
               <button
-                className="bg-gradient-to-br relative group/btn mt-4 from-[#03AED2] to-[#A0DEFF] dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full  text-black dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+                className="bg-black text-white relative group/btn mt-4 dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
                 type="submit"
               >
                 Send Message &rarr;
@@ -119,11 +119,11 @@ export default function Page() {
             </form>
           </div>
 
-          <div className="max-w-md w-full rounded-lg md:rounded-2xl p-7 md:p-8 shadow-input bg-[#c0d1da] dark:bg-black">
+          <div className="max-w-md w-full rounded-lg md:rounded-2xl p-7 md:p-8 shadow-input bg-white dark:bg-black">
             <h2 className="uppercase font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
               Contact Information
             </h2>
-            <div className="my-8 text-white flex flex-col items-start gap-5">
+            <div className="my-8 text-black dark:text-white flex flex-col items-start gap-5">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2" />
                 <span>Delhi Gate, Main Market - Najafgarh, 110043</span>

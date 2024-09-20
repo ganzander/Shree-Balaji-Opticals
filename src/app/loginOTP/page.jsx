@@ -100,14 +100,14 @@ export default function Page() {
   }
 
   return (
-    <div className="h-screen pt-24 w-full flex items-center justify-center bg-[#F6F5F2] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="h-screen w-full flex items-center justify-center bg-[#eee] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
 
       {loginViaOTP && (
-        <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#c0d1da] dark:bg-black">
+        <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 bg-white shadow-2xl dark:bg-black">
           <h2 className="uppercase font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
             Password Assistance
           </h2>
@@ -124,7 +124,9 @@ export default function Page() {
                 autoComplete="off"
               />
             </LabelInputContainer>
-            <div className="mb-4 text-white w-full text-center">OR</div>
+            <div className="mb-4 text-black font-semibold dark:text-white w-full text-center">
+              OR
+            </div>
             <LabelInputContainer className="mb-4">
               <Label htmlFor="mobile">Mobile Number</Label>
               <Input
@@ -139,7 +141,7 @@ export default function Page() {
             </LabelInputContainer>
 
             <button
-              className="bg-gradient-to-br relative group/btn from-[#03AED2] to-[#A0DEFF] dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full  text-black dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+              className="bg-black relative group/btn dark:from-zinc-900 dark:to-zinc-900 block dark:bg-zinc-800 w-full text-white dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
               type="submit"
             >
               Send OTP &rarr;
@@ -151,7 +153,7 @@ export default function Page() {
         </div>
       )}
       {enterOTP && (
-        <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#c0d1da] dark:bg-black">
+        <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-2xl bg-white dark:bg-black">
           <h2 className="uppercase font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
             OTP Verification
           </h2>
@@ -170,7 +172,7 @@ export default function Page() {
               />
             </LabelInputContainer>
             <button
-              className="bg-gradient-to-br relative group/btn from-[#03AED2] to-[#A0DEFF] dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full  text-black dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+              className="bg-black relative group/btn dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full text-white dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
               type="submit"
             >
               Verify OTP &rarr;

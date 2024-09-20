@@ -55,12 +55,12 @@ export default function Page() {
   }
 
   return (
-    <div className="h-screen pt-24 w-full flex items-center justify-center bg-[#F6F5F2] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="h-screen w-full flex items-center justify-center bg-[#eee] dark:bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
-      <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-7 md:p-8 shadow-input bg-[#c0d1da] dark:bg-black">
+      <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-7 md:p-8 shadow-2xl bg-white dark:bg-black">
         <h2 className="uppercase font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
           Log In
         </h2>
@@ -93,12 +93,12 @@ export default function Page() {
             />
           </LabelInputContainer>
           <Link href="/loginOTP">
-            <small className="text-sm font-medium text-black dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            <small className="text-sm font-medium text-slate-600 dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
               Forgot Password
             </small>
           </Link>
           <button
-            className="bg-gradient-to-br relative group/btn mt-4 from-[#03AED2] to-[#A0DEFF] dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full  text-black dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            className="relative group/btn mt-4 bg-black text-white dark:from-zinc-900 dark:to-zinc-900  block dark:bg-zinc-800 w-full dark:text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
           >
             Log In &rarr;
@@ -115,7 +115,7 @@ export default function Page() {
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
-          <button
+          {/* <button
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
             type="submit"
           >
@@ -124,7 +124,7 @@ export default function Page() {
               Google
             </span>
             <BottomGradient />
-          </button>
+          </button> */}
         </form>
       </div>
     </div>
