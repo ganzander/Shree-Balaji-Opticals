@@ -41,83 +41,90 @@ function Navbar({ className }) {
       }
     }
   }, []);
-  console.log(decoded);
 
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-[80%] mx-auto z-50",
+        "fixed top-10 inset-x-0 w-screen md:max-w-[80%] mx-auto z-50",
         className
       )}
     >
       <Menu setActive={setActive}>
-        <Link href="/">
-          <MenuItem setActive={setActive} active={active} item="Home" />
-        </Link>
-        <Link href="/lens">
-          <MenuItem setActive={setActive} active={active} item="Lens" />
-        </Link>
-        <Link href="/frames">
-          <MenuItem setActive={setActive} active={active} item="Frames" />
-        </Link>
-        {decoded.fname !== undefined ? (
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item={`Hi, ${decoded.fname}`}
-          >
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/profile">
-                <div className="flex justify-between items-center">
-                  Profile
-                  <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                </div>
-              </HoveredLink>
-              <HoveredLink href="/cart">
-                <div className="flex justify-between items-center">
-                  Cart
-                  <IconGardenCart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                </div>
-              </HoveredLink>
-              <HoveredLink href="/orders">
-                <div className="flex justify-between items-center">
-                  Order
-                  <IconTruckDelivery className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                </div>
-              </HoveredLink>
-              <HoveredLink href="/settings">
-                <div className="flex justify-between items-center">
-                  Settings
-                  <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                </div>
-              </HoveredLink>
-              {decoded.isAdmin && (
-                <HoveredLink href="/updateMenu">
+        <div className="w-[45%] sm:w-[50%] flex items-center">
+          <Link href="/">
+            <MenuItem
+              setActive={setActive}
+              active={active}
+              item="Shree Balaji Opticals"
+            />
+          </Link>
+        </div>
+        <div className="w-[55%] sm:w-[50%] flex justify-around items-center">
+          <Link href="/lens">
+            <MenuItem setActive={setActive} active={active} item="Lens" />
+          </Link>
+          <Link href="/frames">
+            <MenuItem setActive={setActive} active={active} item="Frames" />
+          </Link>
+          {decoded.fname !== undefined ? (
+            <MenuItem
+              setActive={setActive}
+              active={active}
+              item={`Hi, ${decoded.fname}`}
+            >
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/profile">
                   <div className="flex justify-between items-center">
-                    Update
-                    <IconEditCircle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                    Profile
+                    <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                   </div>
                 </HoveredLink>
-              )}
-              <HoveredLink href="">
-                <div
-                  className="flex justify-between items-center"
-                  onClick={() => {
-                    localStorage.removeItem("AuthToken");
-                    location.reload();
-                  }}
-                >
-                  Logout
-                  <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                </div>
-              </HoveredLink>
-            </div>
-          </MenuItem>
-        ) : (
-          <Link href="/login">
-            <MenuItem setActive={setActive} active={active} item="Login" />
-          </Link>
-        )}
+                <HoveredLink href="/cart">
+                  <div className="flex justify-between items-center">
+                    Cart
+                    <IconGardenCart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  </div>
+                </HoveredLink>
+                <HoveredLink href="/orders">
+                  <div className="flex justify-between items-center">
+                    Order
+                    <IconTruckDelivery className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  </div>
+                </HoveredLink>
+                <HoveredLink href="/settings">
+                  <div className="flex justify-between items-center">
+                    Settings
+                    <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  </div>
+                </HoveredLink>
+                {decoded.isAdmin && (
+                  <HoveredLink href="/updateMenu">
+                    <div className="flex justify-between items-center">
+                      Update
+                      <IconEditCircle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                    </div>
+                  </HoveredLink>
+                )}
+                <HoveredLink href="">
+                  <div
+                    className="flex justify-between items-center"
+                    onClick={() => {
+                      localStorage.removeItem("AuthToken");
+                      location.reload();
+                    }}
+                  >
+                    Logout
+                    <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  </div>
+                </HoveredLink>
+              </div>
+            </MenuItem>
+          ) : (
+            <Link href="/login">
+              <MenuItem setActive={setActive} active={active} item="Login" />
+            </Link>
+          )}
+        </div>
       </Menu>
     </div>
   );

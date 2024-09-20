@@ -97,11 +97,7 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <div className="w-full">
-                <p className="relative text-center z-20 text-sm leading-[1.6] text-black font-semibold dark:text-[#FFF4EA]">
-                  {item.quote}
-                </p>
-              </div>
+
               <div className="relative z-20 mt-6 flex flex-row items-center w-full">
                 <span className="flex flex-col gap-1 text-center w-full">
                   <span className="text-sm leading-[1.6] text-black font-semibold dark:text-gray-400 ">
@@ -111,6 +107,11 @@ export const InfiniteMovingCards = ({
                     {item.title}
                   </span>
                 </span>
+              </div>
+              <div className="w-full">
+                <p className="relative text-center z-20 text-sm leading-[1.6] text-black font-semibold dark:text-[#FFF4EA]">
+                  {item.quote}
+                </p>
               </div>
             </blockquote>
           </li>
