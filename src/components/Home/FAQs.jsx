@@ -9,7 +9,7 @@ import {
 
 export default function FAQs() {
   return (
-    <div className="relative overflow-hidden overflow-x-hidden dark:bg-grid-white/[0.09] bg-[#eee] text-black dark:bg-black dark:text-white antialiased min-h-screen w-full flex flex-col justify-center items-center">
+    <div className="relative overflow-hidden overflow-x-hidden dark:bg-grid-white/[0.05] bg-[#eee] text-black dark:bg-black dark:text-white antialiased min-h-screen w-full flex flex-col justify-center items-center">
       <p className="text-center text-2xl md:text-5xl font-bold relative z-20 bg-clip-text text-black dark:text-white py-8">
         FAQs
       </p>

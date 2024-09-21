@@ -50,7 +50,7 @@ function Navbar({ className }) {
       )}
     >
       <Menu setActive={setActive}>
-        <div className="w-[45%] sm:w-[50%] flex items-center">
+        <div className="w-[45%] sm:w-[50%] flex items-center justify-center">
           <Link href="/">
             <MenuItem
               setActive={setActive}
