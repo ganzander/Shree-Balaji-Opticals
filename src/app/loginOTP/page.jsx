@@ -73,9 +73,6 @@ export default function Page() {
             JSON.stringify(result.data.AuthToken)
           );
           router.push("/");
-          setTimeout(() => {
-            location.reload();
-          }, 200);
         } else {
           toast.error(result.data.message);
         }
@@ -89,9 +86,6 @@ export default function Page() {
             JSON.stringify(result.data.AuthToken)
           );
           router.push("/");
-          setTimeout(() => {
-            location.reload();
-          }, 200);
         } else {
           toast.error(result.data.message);
         }

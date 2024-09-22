@@ -16,11 +16,11 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// export const metadata = {
-//   title: "Shree Balaji Opticals",
-//   description:
-//     "Shree Balaji Opticals is here to help you see the world more clearly.",
-// };
+const metadata = {
+  title: "Shree Balaji Opticals",
+  description:
+    "Shree Balaji Opticals is here to help you see the world more clearly.",
+};
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();

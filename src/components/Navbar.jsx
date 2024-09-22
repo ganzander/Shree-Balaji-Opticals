@@ -1,11 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from "@/components/ui/navbar-menu";
+import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -28,19 +23,22 @@ export default function NavbarDemo() {
 
 function Navbar({ className }) {
   const [active, setActive] = useState(null);
-  const [decoded, setDecoded] = useState({});
+  const [decoded, setDecoded] = useState(null);
   const [authToken, setAuthToken] = useState("");
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedAuthToken = JSON.parse(localStorage.getItem("AuthToken"));
-      if (storedAuthToken) {
-        setAuthToken(storedAuthToken);
-        const decodedToken = jwt.decode(storedAuthToken);
-        setDecoded(decodedToken);
-      }
+    const token = localStorage.getItem("AuthToken");
+    if (token) {
+      const decodedToken = jwt.decode(JSON.parse(token));
+      setDecoded(decodedToken);
+      setAuthToken(token);
     }
   }, []);
+
+  function handleLogout() {
+    localStorage.removeItem("AuthToken");
+    location.reload();
+  }
 
   return (
     <div
@@ -66,7 +64,8 @@ function Navbar({ className }) {
           <Link href="/frames">
             <MenuItem setActive={setActive} active={active} item="Frames" />
           </Link>
-          {decoded.fname !== undefined ? (
+
+          {decoded ? (
             <MenuItem
               setActive={setActive}
               active={active}
@@ -74,48 +73,28 @@ function Navbar({ className }) {
             >
               <div className="flex flex-col space-y-4 text-sm">
                 <HoveredLink href="/profile">
-                  <div className="flex justify-between items-center">
-                    Profile
-                    <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                  </div>
+                  <MenuItemContent label="Profile" Icon={IconBrandTabler} />
                 </HoveredLink>
                 <HoveredLink href="/cart">
-                  <div className="flex justify-between items-center">
-                    Cart
-                    <IconGardenCart className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                  </div>
+                  <MenuItemContent label="Cart" Icon={IconGardenCart} />
                 </HoveredLink>
                 <HoveredLink href="/orders">
-                  <div className="flex justify-between items-center">
-                    Order
-                    <IconTruckDelivery className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                  </div>
+                  <MenuItemContent label="Order" Icon={IconTruckDelivery} />
                 </HoveredLink>
                 <HoveredLink href="/settings">
-                  <div className="flex justify-between items-center">
-                    Settings
-                    <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                  </div>
+                  <MenuItemContent label="Settings" Icon={IconSettings} />
                 </HoveredLink>
                 {decoded.isAdmin && (
-                  <HoveredLink href="/updateMenu">
-                    <div className="flex justify-between items-center">
-                      Update
-                      <IconEditCircle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                    </div>
+                  <HoveredLink href="/admin">
+                    <MenuItemContent label="Update" Icon={IconEditCircle} />
                   </HoveredLink>
                 )}
-                <HoveredLink href="">
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => {
-                      localStorage.removeItem("AuthToken");
-                      location.reload();
-                    }}
-                  >
-                    Logout
-                    <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                  </div>
+                <HoveredLink href="#">
+                  <MenuItemContent
+                    label="Logout"
+                    Icon={IconArrowLeft}
+                    onClick={handleLogout}
+                  />
                 </HoveredLink>
               </div>
             </MenuItem>
@@ -126,6 +105,15 @@ function Navbar({ className }) {
           )}
         </div>
       </Menu>
+    </div>
+  );
+}
+
+function MenuItemContent({ label, Icon, onClick }) {
+  return (
+    <div className="flex justify-between items-center" onClick={onClick}>
+      {label}
+      <Icon className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
     </div>
   );
 }

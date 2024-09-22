@@ -12,7 +12,6 @@ import axios from "axios";
 
 export default function Page() {
   const router = useRouter();
-
   const [loginCred, setLoginCred] = useState({
     email: "",
     password: "",
@@ -33,15 +32,12 @@ export default function Page() {
     } else {
       axios.post("/api/login", { email, password }).then((result) => {
         if (result.data.Success === true) {
-          router.push("/");
           localStorage.setItem(
             "AuthToken",
             JSON.stringify(result.data.AuthToken)
           );
           toast.success(result.data.msg);
-          setTimeout(() => {
-            location.reload();
-          }, 200);
+          router.push("/");
         } else {
           toast.error(result.data.msg);
         }
@@ -93,7 +89,7 @@ export default function Page() {
             />
           </LabelInputContainer>
           <Link href="/loginOTP">
-            <small className="text-sm font-medium text-slate-600 dark:text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            <small className="text-sm dark:text-xs font-medium text-slate-600 dark:text-slate-200 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
               Forgot Password
             </small>
           </Link>

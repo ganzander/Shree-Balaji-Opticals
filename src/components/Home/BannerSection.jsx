@@ -42,7 +42,7 @@ export default function BannerSection() {
       ),
     },
     {
-      id: 3,
+      id: 4,
       content: (
         <Image
           src="/banners/4.png"
