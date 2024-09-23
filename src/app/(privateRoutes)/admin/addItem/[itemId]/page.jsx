@@ -100,7 +100,7 @@ export default function Page() {
         {isAdmin === true && (
           <div className="flex flex-col py-5">
             <h2 className="w-full text-center pb-5 text-lg sm:text-2xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-              Add Items
+              Add Colours
             </h2>
             <div className="max-w-md w-full mx-auto rounded-lg md:rounded-2xl p-7 md:p-8 shadow-2xl bg-white dark:bg-black">
               <form className="my-8" onSubmit={handleSubmit}>

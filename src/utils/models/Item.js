@@ -24,4 +24,4 @@ const opticalSchema = new mongoose.Schema({
 });
 
 module.exports =
-  mongoose.models.opticals || mongoose.model("Optical", opticalSchema);
+  mongoose.models.opticals || mongoose.model("opticals", opticalSchema);
