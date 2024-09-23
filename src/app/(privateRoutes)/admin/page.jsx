@@ -48,14 +48,16 @@ export default function Page() {
               Choose
             </h2>
             <div className="flex flex-col justify-center gap-4 sm:flex-row sm:justify-around sm:items-center sm:w-screen">
-              <Button onClick={() => router.push("addItem")}>Add Item</Button>
-              <Button onClick={() => router.push("updateItem")}>
+              <Button onClick={() => router.push("admin/addItem")}>
+                Add Item
+              </Button>
+              <Button onClick={() => router.push("admin/updateItem")}>
                 Update Item
               </Button>
-              <Button onClick={() => router.push("deleteItem")}>
+              <Button onClick={() => router.push("admin/deleteItem")}>
                 Delete Item
               </Button>
-              <Button onClick={() => router.push("viewItems")}>
+              <Button onClick={() => router.push("admin/viewItems")}>
                 View All Items
               </Button>
             </div>
