@@ -8,12 +8,11 @@ export async function POST(req, res) {
     return Response.json({ Success: false, msg: "Enter your item id" });
   }
 
-  const findItem = await Optical.deleteOne({ _id: itemid });
-
-  if (findItem.deletedCount === 1) {
+  const findItem = await Optical.findOne({ _id: itemid });
+  if (findItem) {
     return Response.json({
       Success: true,
-      msg: "Deleted the item",
+      msg: "Found the item",
       foundItem: findItem,
     });
   } else {

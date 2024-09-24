@@ -2,7 +2,7 @@
 import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 import { Button } from "@/components/ui/button";
 
@@ -54,11 +54,8 @@ export default function Page() {
               <Button onClick={() => router.push("admin/updateItem")}>
                 Update Item
               </Button>
-              <Button onClick={() => router.push("admin/deleteItem")}>
-                Delete Item
-              </Button>
-              <Button onClick={() => router.push("admin/viewItems")}>
-                View All Items
+              <Button onClick={() => router.push("admin/viewItem")}>
+                View Item
               </Button>
             </div>
           </div>

@@ -23,7 +23,6 @@ export default function Page() {
     name: "",
     brand: "",
   });
-  const [itemId, setItemId] = useState(null);
 
   function handleFileUpload(files) {
     setFiles(files);
@@ -46,9 +45,7 @@ export default function Page() {
         .post("/api/admin/add-item", { category, price, size, name, brand })
         .then((result) => {
           if (result.data.Success === true) {
-            toast.success(result.data.msg);
-            setItemId(result.data.itemId);
-            router.push("/admin/addItem/" + result.data.itemId);
+            toast.success(result.data.msg + " with id: " + result.data.itemId);
           } else {
             toast.error(result.data.msg);
           }
@@ -132,7 +129,7 @@ export default function Page() {
                     name="brand"
                     value={uploadCred.brand}
                     onChange={handleChange}
-                    placeholder="Brand"
+                    placeholder="Enter the Brand"
                     type="text"
                     autoComplete="off"
                     required
@@ -147,7 +144,7 @@ export default function Page() {
                     name="name"
                     value={uploadCred.name}
                     onChange={handleChange}
-                    placeholder="Name"
+                    placeholder="Enter the Name"
                     type="text"
                     autoComplete="off"
                     required
@@ -180,7 +177,7 @@ export default function Page() {
                     name="price"
                     value={uploadCred.price}
                     onChange={handleChange}
-                    placeholder="Price"
+                    placeholder="Enter the Price"
                     type="text"
                     autoComplete="off"
                     required

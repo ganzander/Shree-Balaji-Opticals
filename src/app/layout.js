@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
 
   return (
-    <html lang="en" className="overflow-x-hidden dark">
+    <html lang="en" className="overflow-x-hidden">
       <body className="antialiased">
         {pathname !== "/login" &&
           pathname !== "/register" &&
