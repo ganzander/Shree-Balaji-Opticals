@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { IconBrandGoogle } from "@tabler/icons-react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import Link from "next/link";
 import toast from "react-hot-toast";

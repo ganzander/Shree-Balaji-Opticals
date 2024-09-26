@@ -119,6 +119,7 @@ export default function Page() {
                     onChange={handleItemIDChange}
                     type="text"
                     required
+                    autoComplete="off"
                     placeholder="Enter the Item Id"
                   />
                 </LabelInputContainer>
