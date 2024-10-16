@@ -8,20 +8,22 @@ import {
   IconGardenCart,
   IconTruckDelivery,
   IconEditCircle,
+  IconSun,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import jwt from "jsonwebtoken";
+import { motion } from "framer-motion";
 
-export default function NavbarDemo() {
+export default function NavbarDemo({ changeTheme, theme }) {
   return (
     <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
+      <Navbar theme={theme} changeTheme={changeTheme} className="top-0" />
     </div>
   );
 }
 
-function Navbar({ className }) {
+function Navbar({ className, theme, changeTheme }) {
   const [active, setActive] = useState(null);
   const [decoded, setDecoded] = useState(null);
   const [authToken, setAuthToken] = useState("");
@@ -41,14 +43,9 @@ function Navbar({ className }) {
   }
 
   return (
-    <div
-      className={cn(
-        "fixed top-10 inset-x-0 w-screen md:max-w-[80%] mx-auto z-50",
-        className
-      )}
-    >
+    <div className={cn("fixed top-10 inset-x-0 w-screen z-50", className)}>
       <Menu setActive={setActive}>
-        <div className="w-[45%] sm:w-[50%] flex items-center justify-center">
+        <div className="w-[30%] md:w-[50%] text-center flex items-center justify-center">
           <Link href="/">
             <MenuItem
               setActive={setActive}
@@ -57,7 +54,8 @@ function Navbar({ className }) {
             />
           </Link>
         </div>
-        <div className="w-[55%] sm:w-[50%] flex justify-around items-center">
+
+        <div className="w-[70%] md:w-[50%] flex justify-around items-center">
           <Link href="/lens">
             <MenuItem setActive={setActive} active={active} item="Lens" />
           </Link>
@@ -103,6 +101,14 @@ function Navbar({ className }) {
               <MenuItem setActive={setActive} active={active} item="Login" />
             </Link>
           )}
+          <div onClick={changeTheme} className="relative">
+            <motion.p
+              transition={{ duration: 0.3 }}
+              className="cursor-pointer text-black dark:text-white text-xs sm:text-sm md:text-xl font-normal hover:opacity-[0.9] "
+            >
+              <IconSun stroke={1.25} />
+            </motion.p>
+          </div>
         </div>
       </Menu>
     </div>

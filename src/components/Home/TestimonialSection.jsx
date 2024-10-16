@@ -49,7 +49,7 @@ export default function TestimonialSection() {
   return (
     <div className="h-screen overflow-x-hidden flex flex-col antialiased bg-[#eee] dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <p className="uppercase text-2xl md:text-5xl font-bold relative z-20 bg-clip-text text-black dark:text-white py-8">
-        Testimonials
+        Reviews
       </p>
       <InfiniteMovingCards
         items={testimonials}
