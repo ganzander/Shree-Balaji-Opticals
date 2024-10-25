@@ -17,7 +17,7 @@ function generateAuthToken(newuser) {
         isAdmin: newuser.isAdmin,
         isVerifiedPhone: newuser.isVerifiedPhone,
         isVerifiedEmail: newuser.isVerifiedEmail,
-        phone: newuser.phone
+        phone: newuser.phone,
       },
       process.env.HASH_KEY
     );

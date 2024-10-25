@@ -70,20 +70,20 @@ function Navbar({ className, theme, changeTheme }) {
               item={`Hi, ${decoded.fname}`}
             >
               <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/profile">
+                <HoveredLink href="/user/profile">
                   <MenuItemContent label="Profile" Icon={IconBrandTabler} />
                 </HoveredLink>
-                <HoveredLink href="/cart">
+                <HoveredLink href="/user/cart">
                   <MenuItemContent label="Cart" Icon={IconGardenCart} />
                 </HoveredLink>
-                <HoveredLink href="/orders">
+                <HoveredLink href="/user/orders">
                   <MenuItemContent label="Order" Icon={IconTruckDelivery} />
                 </HoveredLink>
-                <HoveredLink href="/settings">
+                <HoveredLink href="/user/settings">
                   <MenuItemContent label="Settings" Icon={IconSettings} />
                 </HoveredLink>
                 {decoded.isAdmin && (
-                  <HoveredLink href="/admin">
+                  <HoveredLink href="/user/admin">
                     <MenuItemContent label="Update" Icon={IconEditCircle} />
                   </HoveredLink>
                 )}
@@ -117,7 +117,7 @@ function Navbar({ className, theme, changeTheme }) {
 
 function MenuItemContent({ label, Icon, onClick }) {
   return (
-    <div className="flex justify-between items-center" onClick={onClick}>
+    <div className="flex justify-between items-center gap-2" onClick={onClick}>
       {label}
       <Icon className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
     </div>

@@ -14,24 +14,25 @@ const transporter = nodemailer.createTransport({
 export async function POST(req) {
   try {
     const { email } = await req.json();
-    const OTP = Math.floor(100000 + Math.random() * 900000);
     const user = await User.findOne({ email });
     if (!user) {
       return Response.json({ Success: false, msg: "Email not registered" });
     }
-    await User.updateOne({ email }, { $set: { otp: OTP } });
     const mailOptions = {
       from: process.env.EMAIL,
       to: email,
-      subject: "OTP Validation",
-      text: `Your OTP is: ${OTP}`,
+      subject: "Update User Details",
+      text: `Hi`,
     };
 
     await transporter.sendMail(mailOptions);
 
-    return Response.json({ Success: true, msg: "OTP sent" });
+    return Response.json({
+      Success: true,
+      msg: "We have sent you a mail to change your details on your registered email address. After changing details please login again.",
+    });
   } catch (error) {
-    console.error("Error sending OTP:", error);
+    console.error("Error sending mail:", error);
     return Response.json({ Success: false, msg: "An error occurred" });
   }
 }
