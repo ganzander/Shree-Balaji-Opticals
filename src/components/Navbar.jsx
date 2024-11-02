@@ -1,13 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
+import {
+  HoveredLink,
+  Menu,
+  MenuItem,
+  ProductItem,
+} from "@/components/ui/navbar-menu";
 import {
   IconArrowLeft,
   IconBrandTabler,
   IconSettings,
   IconGardenCart,
   IconTruckDelivery,
-  IconEditCircle,
   IconSun,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
@@ -56,12 +60,34 @@ function Navbar({ className, theme, changeTheme }) {
         </div>
 
         <div className="w-[70%] md:w-[50%] flex justify-around items-center">
-          <Link href="/lens">
-            <MenuItem setActive={setActive} active={active} item="Lens" />
-          </Link>
-          <Link href="/frames">
-            <MenuItem setActive={setActive} active={active} item="Frames" />
-          </Link>
+          <MenuItem setActive={setActive} active={active} item="Products">
+            <div className="text-sm grid lg:grid-cols-2 gap-10 p-4">
+              <ProductItem
+                title="Power Glasses"
+                href="/lens"
+                src="https://images.unsplash.com/photo-1456081101716-74e616ab23d8?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                description="Experience clear vision with our high-quality power glasses designed for everyday comfort and style."
+              />
+              <ProductItem
+                title="Sunglasses"
+                href="/sunglasses"
+                src="https://images.unsplash.com/photo-1501619838605-f3e4c602db04?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                description="Protect your eyes from UV rays while staying fashionable with our range of trendy sunglasses."
+              />
+              <ProductItem
+                title="Contact Lens"
+                href="/contact-lens"
+                src="https://images.unsplash.com/photo-1659351423172-bb8d42079d6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGFjdCUyMGxlbnN8ZW58MHx8MHx8fDA%3D"
+                description="Discover the convenience and clarity of our high-quality contact lenses for all-day comfort."
+              />
+              <ProductItem
+                title="Accessories"
+                href="/accessories"
+                src="https://images.unsplash.com/photo-1628771065117-74ccb5690668?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGV5ZSUyMG1lZGljaW5lc3xlbnwwfHwwfHx8MA%3D%3D"
+                description="Complete your look with our range of stylish and functional eyewear accessories."
+              />
+            </div>
+          </MenuItem>
 
           {decoded ? (
             <MenuItem
@@ -82,11 +108,6 @@ function Navbar({ className, theme, changeTheme }) {
                 <HoveredLink href="/user/settings">
                   <MenuItemContent label="Settings" Icon={IconSettings} />
                 </HoveredLink>
-                {decoded.isAdmin && (
-                  <HoveredLink href="/user/admin">
-                    <MenuItemContent label="Update" Icon={IconEditCircle} />
-                  </HoveredLink>
-                )}
                 <HoveredLink href="#">
                   <MenuItemContent
                     label="Logout"
