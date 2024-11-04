@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import jwt from "jsonwebtoken";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 export default function NavbarDemo({ changeTheme, theme }) {
   return (
@@ -27,10 +28,11 @@ export default function NavbarDemo({ changeTheme, theme }) {
   );
 }
 
-function Navbar({ className, theme, changeTheme }) {
+function Navbar({ className }) {
   const [active, setActive] = useState(null);
   const [decoded, setDecoded] = useState(null);
   const [authToken, setAuthToken] = useState("");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const token = localStorage.getItem("AuthToken");
@@ -122,7 +124,10 @@ function Navbar({ className, theme, changeTheme }) {
               <MenuItem setActive={setActive} active={active} item="Login" />
             </Link>
           )}
-          <div onClick={changeTheme} className="relative">
+          <div
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="relative"
+          >
             <motion.p
               transition={{ duration: 0.3 }}
               className="cursor-pointer text-black dark:text-white text-xs sm:text-sm md:text-xl font-normal hover:opacity-[0.9] "

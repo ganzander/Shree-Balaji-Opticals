@@ -55,11 +55,13 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
     }
   };
 
-  const handleCardClose = (index) => {
+  // Define the onCardClose function here to update the current index when a card is closed
+  const onCardClose = (index) => {
+    const cardWidth = isMobile() ? 230 : 384;
+    const gap = isMobile() ? 4 : 8;
+    const scrollPosition = (cardWidth + gap) * (index + 1);
+
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384;
-      const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
@@ -73,7 +75,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
   };
 
   return (
-    <CarouselContext.Provider value={{ currentIndex }}>
+    <CarouselContext.Provider value={{ currentIndex, onCardClose }}>
       <div className="relative w-full">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
@@ -108,7 +110,11 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+                className={`rounded-3xl ${
+                  index === items.length - 1
+                    ? ""
+                    : "last:pr-[5%] md:last:pr-[33%]"
+                }`} // Adjust padding for the last card
               >
                 {item}
               </motion.div>
